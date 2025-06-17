@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part2</title>
+</head>
+<body>
+    <h1>Simulador de Dados</h1>
+  <button onclick="girarDados()">Girar Dados</button>
+
+  <p>D6: <span id="d6">-</span></p>
+  <p>D8: <span id="d8">-</span></p>
+  <p>D20: <span id="d20">-</span></p>
+
+     <script>
+    
+    function rolarDado(faces) {
+      return Math.floor(Math.random() * faces) + 1
+    }
+
+    function girarDados() {
+      document.getElementById('d6').textContent = rolarDado(6)
+      document.getElementById('d8').textContent = rolarDado(8)
+      document.getElementById('d20').textContent = rolarDado(20);
+    }
+  </script>
+</body>
+</html>
