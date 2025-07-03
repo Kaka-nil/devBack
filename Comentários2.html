@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu de Controle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .menu {
+      margin-bottom: 20px;
+    }
+
+    .menu button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .container img {
+      width: 200px;
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menu de Controle</h1>
+
+  <div class="menu">
+    <button id="opcao1">🍕 Pizza</button>
+    <button id="opcao2">🐶 Cachorro</button>
+    <button id="opcao3">🌅 Paisagem</button>
+  </div>
+
+  <div class="container" id="conteudo">
+    <h2>Bem-vindo!</h2>
+    <p>Escolha uma opção no menu acima.</p>
+    <img src="https://via.placeholder.com/200x150" alt="Imagem padrão">
+  </div>
+
+  <script>
+    const conteudo = document.getElementById("conteudo");
+
+    const opcoes = {
+      opcao1: {
+        titulo: "Pizza deliciosa",
+        texto: "Nada como uma boa pizza para alegrar o dia!",
+        imagem: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg"
+      },
+      opcao2: {
+        titulo: "Cachorro fofo",
+        texto: "Olha esse amiguinho peludo!",
+        imagem: "https://cdn.pixabay.com/photo/2016/02/19/10/00/dog-1207816_1280.jpg"
+      },
+      opcao3: {
+        titulo: "Paisagem relaxante",
+        texto: "A natureza acalma a alma.",
+        imagem: "https://cdn.pixabay.com/photo/2015/03/26/09/54/landscape-690734_1280.jpg"
+      }
+    };
+
+    // Adiciona os event listeners
+    document.getElementById("opcao1").addEventListener("click", () => atualizarConteudo("opcao1"));
+    document.getElementById("opcao2").addEventListener("click", () => atualizarConteudo("opcao2"));
+    document.getElementById("opcao3").addEventListener("click", () => atualizarConteudo("opcao3"));
+
+    function atualizarConteudo(opcao) {
+      const item = opcoes[opcao];
+      conteudo.innerHTML = `
+        <h2>${item.titulo}</h2>
+        <p>${item.texto}</p>
+        <img src="${item.imagem}" alt="${item.titulo}">
+      `;
+    }
+  </script>
+
+</body>
+</html>
